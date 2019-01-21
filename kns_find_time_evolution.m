@@ -19,10 +19,10 @@ grating = 4.818417202723469; % from calibration
 load('./kns_temp_rec_04.mat');
 % This provides column vectors T_timestamp and T_out
 
-alphas.pre_anneal = zeros(5,1);
-times.pre_anneal = zeros(5,1);
-
 % pre-anneal
+alphas.pre_anneal   = zeros(5,1);
+times.pre_anneal    = zeros(5,1);
+Ts.pre_anneal       = zeros(5,1);
 for ii = 1:5
     sii = num2str(ii);
     posfile = strcat('BGU_Th-22-7-16-APT_high_Th-04.80um-', ...
@@ -37,14 +37,21 @@ for ii = 1:5
     % pos, neg, and fix will all give the same time stamp
     times.pre_anneal(ii,1) = kns_get_timestamp_from_TGS_datafile(posfile);
 
+    Ts.pre_anneal(ii,1) ...
+    = kns_find_T_from_time(   T_timestamp, T_out, times.pre_anneal(ii,1)  );
+
     [freq_final,freq_error,speed,diffusivity,diffusivity_err,tau] ... 
     = TGS_phase_analysis(posfile, negfile, grating, 2);
 
    alphas.pre_anneal(ii,1) = diffusivity; 
 end
 
+
+
 % post-anneal 01
-alphas.post_anneal01 = zeros(5, 1);
+alphas.post_anneal01    = zeros(5, 1);
+times.post_anneal01     = zeros(5,1);
+Ts.post_anneal01        = zeros(5,1);
 for ii = 1:5
     sii = num2str(ii);
     posfile = strcat('BGU_Th-22-7-16-APT_high_Th-04.80um-', ...
@@ -57,7 +64,10 @@ for ii = 1:5
     'post_anneal_01-FIX-', sii, '.txt');
 
     % pos, neg, and fix will all give the same time stamp
-    timestamp = kns_get_timestamp_from_TGS_datafile(posfile);
+    times.post_anneal01(ii,1) = kns_get_timestamp_from_TGS_datafile(posfile);
+
+    Ts.post_anneal01(ii,1) ...
+    = kns_find_T_from_time(   T_timestamp, T_out, times.post_anneal01(ii,1)  );
 
     [freq_final,freq_error,speed,diffusivity,diffusivity_err,tau] ... 
     = TGS_phase_analysis(posfile, negfile, grating, 2);
@@ -68,7 +78,9 @@ end
 
 
 % post-anneal 00
-alphas.post_anneal00 = zeros(90,1);
+alphas.post_anneal00    = zeros(90,1);
+times.post_anneal00     = zeros(90,1);
+Ts.post_anneal00        = zeros(90,1);
 for ii = 1:90
     sii = num2str(ii);
     posfile = strcat('BGU_Th-22-7-16-APT_high_Th-04.80um-', ...
@@ -81,7 +93,10 @@ for ii = 1:90
     'post_anneal_00-FIX-', sii, '.txt');
 
     % pos, neg, and fix will all give the same time stamp
-    timestamp = kns_get_timestamp_from_TGS_datafile(posfile);
+    times.post_anneal00(ii,1) = kns_get_timestamp_from_TGS_datafile(posfile);
+
+    Ts.post_anneal00(ii,1) ...
+    = kns_find_T_from_time(   T_timestamp, T_out, times.post_anneal00(ii,1)  );
 
     [freq_final,freq_error,speed,diffusivity,diffusivity_err,tau] ... 
     = TGS_phase_analysis(posfile, negfile, grating, 2);
@@ -94,4 +109,4 @@ end
 
 %wavelengths = SAW_c_tungsten ./ (freqs .* 1e-6)
 
-
+save("./variable_dump.mat");
