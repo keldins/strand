@@ -134,13 +134,23 @@ plot(T_timestamp, T_out, fmt1);
 title("Temperature of sample over time");
 xlabel("Time (s)");
 ylabel("Temperature (C)");
-print("-dpdflatex", "~/strand/plots/");
-print("-dpsc", "~/strand/plots/alphas_vs_Ts_all");
-print("-depsc", "~/strand/plots/alphas_vs_Ts_all");
-print("-dpdf", "~/strand/plots/alphas_vs_Ts_all");
-print("-dpng", "~/strand/plots/alphas_vs_Ts_all");
-print("-dsvg", "~/strand/plots/alphas_vs_Ts_all");
+print("-dpdflatex", "~/strand/plots/T_vs_time_omega_all");
+print("-dpsc", "~/strand/plots/T_vs_time_omega_all");
+print("-depsc", "~/strand/plots/T_vs_time_omega_all");
+print("-dpdf", "~/strand/plots/T_vs_time_omega_all");
+print("-dpng", "~/strand/plots/T_vs_time_omega_all");
+print("-dsvg", "~/strand/plots/T_vs_time_omega_all");
 
+plot(T_timestamp/3600, T_out, fmt1);
+title("Temperature of sample over time");
+xlabel("Time (s)");
+ylabel("Temperature (C)");
+print("-dpdflatex", "~/strand/plots/T_vs_time_omega_all_hours");
+print("-dpsc", "~/strand/plots/T_vs_time_omega_all_hours");
+print("-depsc", "~/strand/plots/T_vs_time_omega_all_hours");
+print("-dpdf", "~/strand/plots/T_vs_time_omega_all_hours");
+print("-dpng", "~/strand/plots/T_vs_time_omega_all_hours");
+print("-dsvg", "~/strand/plots/T_vs_time_omega_all_hours");
 
 
 %
