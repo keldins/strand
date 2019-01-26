@@ -19,13 +19,13 @@ T_timestamp = T_timestamp - 36000;
 all_times = all_times - 36000;
 
 
-fmt1 = "4";
-fmt2 = "4*";
-fmt3 = "4--";
+fmt1 = "m";
+fmt2 = "*m";
+fmt3 = "--m";
 
 
 plot(times.post_anneal00, Ts.post_anneal00, fmt1);
-title("Temperature change over time after annealing sample", fmt1);
+title("Temperature change over time after annealing sample");
 xlabel("Time (s)");
 ylabel("Temperature (C)");
 print("-dpdflatex", "~/strand/plots/T_over_time_post_anneal00");
@@ -143,7 +143,7 @@ print("-dsvg", "~/strand/plots/T_vs_time_omega_all");
 
 plot(T_timestamp/3600, T_out, fmt1);
 title("Temperature of sample over time");
-xlabel("Time (s)");
+xlabel("Time (hrs)");
 ylabel("Temperature (C)");
 print("-dpdflatex", "~/strand/plots/T_vs_time_omega_all_hours");
 print("-dpsc", "~/strand/plots/T_vs_time_omega_all_hours");

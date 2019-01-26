@@ -4,7 +4,7 @@
 /Title (gl2ps_renderer figure)
 /Creator (GL2PS 1.4.0, (C) 1999-2017 C. Geuzaine)
 /Producer (Octave)
-/CreationDate (D:20190121042923)
+/CreationDate (D:20190126011211)
 >>
 endobj
 2 0 obj
@@ -110,7 +110,7 @@ S
 S
 0.5 w
 2 J
-0 0.447 0.741 RG
+1 0 1 RG
 [] 0 d
 83.367371 96.935181 m
 89.367371 96.935181 l
@@ -916,7 +916,7 @@ S
 endstream
 endobj
 5 0 obj
-20788
+20780
 endobj
 6 0 obj
 <<
@@ -970,10 +970,10 @@ xref
 0000000163 00000 n 
 0000000212 00000 n 
 0000000269 00000 n 
-0000021109 00000 n 
-0000021130 00000 n 
-0000021363 00000 n 
-0000021490 00000 n 
+0000021101 00000 n 
+0000021122 00000 n 
+0000021355 00000 n 
+0000021482 00000 n 
 trailer
 <<
 /Size 9
@@ -981,5 +981,5 @@ trailer
 /Root 2 0 R
 >>
 startxref
-21771
+21763
 %%EOF
