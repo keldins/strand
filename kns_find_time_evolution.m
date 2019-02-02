@@ -20,9 +20,20 @@ load('./kns_temp_rec_04.mat');
 % This provides column vectors T_timestamp and T_out
 
 % pre-anneal
-alphas.pre_anneal   = zeros(5,1);
-times.pre_anneal    = zeros(5,1);
-Ts.pre_anneal       = zeros(5,1);
+alphas.pre_anneal       = zeros(5,1);
+alpha_errs.pre_anneal   = zeros(5,1);
+
+freqs.pre_anneal        = zeros(5,1);
+freq_errs.pre_anneal    = zeros(5,1);
+
+speeds.pre_anneal       = zeros(5,1);
+taus.pre_anneal         = zeros(5,1);
+
+times.pre_anneal        = zeros(5,1);
+Ts.pre_anneal           = zeros(5,1);
+
+% freq_final,freq_error,speed,diffusivity,diffusivity_err,tau
+
 for ii = 1:5
     sii = num2str(ii);
     posfile = strcat('BGU_Th-22-7-16-APT_high_Th-04.80um-', ...
@@ -43,15 +54,32 @@ for ii = 1:5
     [freq_final,freq_error,speed,diffusivity,diffusivity_err,tau] ... 
     = TGS_phase_analysis(posfile, negfile, grating, 2);
 
-   alphas.pre_anneal(ii,1) = diffusivity; 
+   alphas.pre_anneal(ii,1)       = diffusivity; 
+   alpha_errs.pre_anneal(ii,1)   = diffusivity_err;
+
+   freqs.pre_anneal(ii,1)        = freq_final;
+   freq_errs.pre_anneal(ii,1)    = freq_error;
+    
+   speeds.pre_anneal(ii,1)       = speed;
+   taus.pre_anneal(ii,1)         = tau;
 end
 
 
 
 % post-anneal 01
-alphas.post_anneal01    = zeros(5, 1);
-times.post_anneal01     = zeros(5,1);
-Ts.post_anneal01        = zeros(5,1);
+alphas.post_anneal01       = zeros(5,1);
+alpha_errs.post_anneal01   = zeros(5,1);
+
+freqs.post_anneal01        = zeros(5,1);
+freq_errs.post_anneal01    = zeros(5,1);
+
+speeds.post_anneal01       = zeros(5,1);
+taus.post_anneal01         = zeros(5,1);
+
+times.post_anneal01        = zeros(5,1);
+Ts.post_anneal01           = zeros(5,1);
+
+
 for ii = 1:5
     sii = num2str(ii);
     posfile = strcat('BGU_Th-22-7-16-APT_high_Th-04.80um-', ...
@@ -72,15 +100,30 @@ for ii = 1:5
     [freq_final,freq_error,speed,diffusivity,diffusivity_err,tau] ... 
     = TGS_phase_analysis(posfile, negfile, grating, 2);
 
-   alphas.post_anneal01(ii,1) = diffusivity; 
+   alphas.post_anneal01(ii,1)       = diffusivity;
+   alpha_errs.post_anneal01(ii,1)   = diffusivity_err;
+
+   freqs.post_anneal01(ii,1)        = freq_final;
+   freq_errs.post_anneal01(ii,1)    = freq_error;
+    
+   speeds.post_anneal01(ii,1)       = speed;
+   taus.post_anneal01(ii,1)         = tau;
 end
 
 
 
 % post-anneal 00
-alphas.post_anneal00    = zeros(90,1);
-times.post_anneal00     = zeros(90,1);
-Ts.post_anneal00        = zeros(90,1);
+alphas.post_anneal00       = zeros(90,1);
+alpha_errs.post_anneal00   = zeros(90,1);
+
+freqs.post_anneal00        = zeros(90,1);
+freq_errs.post_anneal00    = zeros(90,1);
+
+speeds.post_anneal00       = zeros(90,1);
+taus.post_anneal00         = zeros(90,1);
+
+times.post_anneal00        = zeros(90,1);
+Ts.post_anneal00           = zeros(90,1);
 for ii = 1:90
     sii = num2str(ii);
     posfile = strcat('BGU_Th-22-7-16-APT_high_Th-04.80um-', ...
@@ -101,12 +144,35 @@ for ii = 1:90
     [freq_final,freq_error,speed,diffusivity,diffusivity_err,tau] ... 
     = TGS_phase_analysis(posfile, negfile, grating, 2);
 
-   alphas.post_anneal00(ii,1) = diffusivity; 
+   alphas.post_anneal00(ii,1)       = diffusivity;
+   alpha_errs.post_anneal00(ii,1)   = diffusivity_err;
+
+   freqs.post_anneal00(ii,1)        = freq_final;
+   freq_errs.post_anneal00(ii,1)    = freq_error;
+    
+   speeds.post_anneal00(ii,1)       = speed;
+   taus.post_anneal00(ii,1)         = tau;
 end
 
-%SAW_c_tungsten = 2665.9; % This is the value that Prof. Short used in his demo
-% But, I have similar (but not identical values for which I have citations)
+% Package everything into vectors for convenience in plotting
+all_times       = [times.pre_anneal; times.post_anneal00; times.post_anneal01];
+all_Ts          = [Ts.pre_anneal; Ts.post_anneal00; Ts.post_anneal01];
 
-%wavelengths = SAW_c_tungsten ./ (freqs .* 1e-6)
+all_alphas      = [alphas.pre_anneal; alphas.post_anneal00;...
+alphas.post_anneal01];
+all_alpha_errs  = [alpha_errs.pre_anneal; alpha_errs.post_anneal00; ...
+alpha_errs.post_anneal01];
 
-save("./variable_dump.mat");
+all_freqs       = [freqs.pre_anneal; freqs.post_anneal00; freqs.post_anneal01];
+all_freq_errs   = [freq_errs.pre_anneal; freq_errs.post_anneal00; ...
+freq_errs.post_anneal01];
+
+all_speeds      = [speeds.pre_anneal; speeds.post_anneal00; ...
+speeds.post_anneal01];
+all_taus        = [taus.pre_anneal; taus.post_anneal00; taus.post_anneal01];
+
+
+
+
+
+save("./kns_evolution_data.mat");

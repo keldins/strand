@@ -2,10 +2,7 @@
 % plot data and save so that files can be transferred from cluster to local
 % machine and then viewed
 
-load("./kns_variable_dump.mat");
-all_times = [times.pre_anneal; times.post_anneal00; times.post_anneal01];
-all_Ts = [Ts.pre_anneal; Ts.post_anneal00; Ts.post_anneal01];
-all_alphas = [alphas.pre_anneal; alphas.post_anneal00; alphas.post_anneal01];
+load("./kns_evolution_data.mat");
 
 % T_timestamp, which is the time from the heating element,
 % starts at 39752.61500 seconds
@@ -19,9 +16,9 @@ T_timestamp = T_timestamp - 36000;
 all_times = all_times - 36000;
 
 
-fmt1 = "m";
-fmt2 = "*m";
-fmt3 = "--m";
+fmt1 = "m";     % solid violet line
+fmt2 = "*m";    % violet data points (scatter plot)
+fmt3 = "--m";   % dashed violet line
 
 
 plot(times.post_anneal00, Ts.post_anneal00, fmt1);

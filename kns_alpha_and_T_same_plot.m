@@ -1,5 +1,7 @@
 %temperature and alpha on same plot
 
+load("./kns_evolution_data.mat");
+
 fh = figure();
 [ax, h1, h2] = plotyy(T_timestamp/3600, T_out, all_times/3600, all_alphas);
 set(h1, "linestyle", "--");
