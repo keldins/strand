@@ -27,7 +27,7 @@ freqs.pre_anneal        = zeros(5,1);
 freq_errs.pre_anneal    = zeros(5,1);
 
 speeds.pre_anneal       = zeros(5,1);
-taus.pre_anneal         = zeros(5,1);
+taus.pre_anneal         = zeros(5,3);
 
 times.pre_anneal        = zeros(5,1);
 Ts.pre_anneal           = zeros(5,1);
@@ -53,15 +53,15 @@ for ii = 1:5
 
     [freq_final,freq_error,speed,diffusivity,diffusivity_err,tau] ... 
     = TGS_phase_analysis(posfile, negfile, grating, 2);
-
-   alphas.pre_anneal(ii,1)       = diffusivity; 
+    
+    alphas.pre_anneal(ii,1)       = diffusivity; 
    alpha_errs.pre_anneal(ii,1)   = diffusivity_err;
 
    freqs.pre_anneal(ii,1)        = freq_final;
    freq_errs.pre_anneal(ii,1)    = freq_error;
     
    speeds.pre_anneal(ii,1)       = speed;
-   taus.pre_anneal(ii,1)         = tau;
+   taus.pre_anneal(ii,:)         = tau(:);
 end
 
 
@@ -74,7 +74,7 @@ freqs.post_anneal01        = zeros(5,1);
 freq_errs.post_anneal01    = zeros(5,1);
 
 speeds.post_anneal01       = zeros(5,1);
-taus.post_anneal01         = zeros(5,1);
+taus.post_anneal01         = zeros(5,3);
 
 times.post_anneal01        = zeros(5,1);
 Ts.post_anneal01           = zeros(5,1);
@@ -100,14 +100,14 @@ for ii = 1:5
     [freq_final,freq_error,speed,diffusivity,diffusivity_err,tau] ... 
     = TGS_phase_analysis(posfile, negfile, grating, 2);
 
-   alphas.post_anneal01(ii,1)       = diffusivity;
+    alphas.post_anneal01(ii,1)       = diffusivity;
    alpha_errs.post_anneal01(ii,1)   = diffusivity_err;
 
    freqs.post_anneal01(ii,1)        = freq_final;
    freq_errs.post_anneal01(ii,1)    = freq_error;
     
    speeds.post_anneal01(ii,1)       = speed;
-   taus.post_anneal01(ii,1)         = tau;
+   taus.post_anneal01(ii,:)         = tau(:);
 end
 
 
@@ -120,7 +120,7 @@ freqs.post_anneal00        = zeros(90,1);
 freq_errs.post_anneal00    = zeros(90,1);
 
 speeds.post_anneal00       = zeros(90,1);
-taus.post_anneal00         = zeros(90,1);
+taus.post_anneal00         = zeros(90,3);
 
 times.post_anneal00        = zeros(90,1);
 Ts.post_anneal00           = zeros(90,1);
@@ -151,7 +151,7 @@ for ii = 1:90
    freq_errs.post_anneal00(ii,1)    = freq_error;
     
    speeds.post_anneal00(ii,1)       = speed;
-   taus.post_anneal00(ii,1)         = tau;
+   taus.post_anneal00(ii,:)         = tau(:);
 end
 
 % Package everything into vectors for convenience in plotting
@@ -170,9 +170,6 @@ freq_errs.post_anneal01];
 all_speeds      = [speeds.pre_anneal; speeds.post_anneal00; ...
 speeds.post_anneal01];
 all_taus        = [taus.pre_anneal; taus.post_anneal00; taus.post_anneal01];
-
-
-
 
 
 save("./kns_evolution_data.mat");
