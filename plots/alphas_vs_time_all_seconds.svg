@@ -6,7 +6,7 @@
 <desc>
 Creator: GL2PS 1.4.0, (C) 1999-2017 C. Geuzaine
 For: Octave
-CreationDate: Fri Jan 25 20:12:08 2019
+CreationDate: Sat Feb  2 23:33:01 2019
 </desc>
 <defs>
 </defs>
@@ -62,9 +62,9 @@ CreationDate: Fri Jan 25 20:12:08 2019
 <polyline fill="none" stroke="#262626" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="miter" stroke-dasharray="16,0" points="74.88,32.3999 521.28,32.3999"/>
 <polyline fill="none" stroke="#262626" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="miter" stroke-dasharray="16,0" points="74.88,384.48 74.88,32.3999"/>
 <polyline fill="none" stroke="#262626" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="miter" stroke-dasharray="16,0" points="521.28,384.48 521.28,32.3999"/>
-<text xml:space="preserve" transform="translate(166.08,22.4) rotate(-0,132,0)" font-family="FreeSans" font-weight="bold" font-style="normal" font-size="11"><tspan y="-2" fill="rgb(0,0,0)" x="0 7 14 20 24 34 40 43 46 53 56 60 64 71 77 80 86 89 93 99 102 109 115 121 125 128 132 135 145 151 154 158 165 169 172 178 185 189 192 196 202 205 211 217 224 230 234 237 247 253 260 ">Thermal diffusivity over time for entire experiment</tspan></text>
-<text xml:space="preserve" transform="translate(-17.6245,208.44) rotate(-90,42.5,0)" font-family="FreeSans" font-weight="normal" font-style="normal" font-size="11"><tspan y="-2" fill="rgb(38,38,38)" x="0 7 13 19 23 32 38 40 43 49 51 54 57 63 68 70 75 77 80 ">Thermal diffusivity</tspan></text>
 <text xml:space="preserve" transform="translate(273.08,413.481) rotate(-0,25,-13)" font-family="FreeSans" font-weight="normal" font-style="normal" font-size="11"><tspan y="-2" fill="rgb(38,38,38)" x="0 7 9 18 24 27 31 37 41 46 ">Time (hrs)</tspan></text>
+<text xml:space="preserve" transform="translate(-34.1245,208.44) rotate(-90,59,0)" font-family="FreeSans" font-weight="normal" font-style="normal" font-size="11"><tspan y="-2" fill="rgb(38,38,38)" x="0 7 13 19 23 32 38 40 43 49 51 54 57 63 68 70 75 77 80 85 88 92 ">Thermal diffusivity (m</tspan><tspan font-size="9" y="-8" fill="rgb(38,38,38)" x="101 ">2</tspan><tspan y="-2" fill="rgb(38,38,38)" x="106 109 114 ">/s)</tspan></text>
+<text xml:space="preserve" transform="translate(166.08,22.4) rotate(-0,132,0)" font-family="FreeSans" font-weight="bold" font-style="normal" font-size="11"><tspan y="-2" fill="rgb(0,0,0)" x="0 7 14 20 24 34 40 43 46 53 56 60 64 71 77 80 86 89 93 99 102 109 115 121 125 128 132 135 145 151 154 158 165 169 172 178 185 189 192 196 202 205 211 217 224 230 234 237 247 253 260 ">Thermal diffusivity over time for entire experiment</tspan></text>
 <polyline fill="none" stroke="#ff00ff" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="miter" points="120.327,335.065 126.327,335.065"/>
 <polyline fill="none" stroke="#ff00ff" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="miter" points="123.327,332.065 123.327,338.065"/>
 <polyline fill="none" stroke="#ff00ff" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="miter" points="121.205,332.943 125.448,337.186"/>

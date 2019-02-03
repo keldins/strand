@@ -6,7 +6,7 @@
 <desc>
 Creator: GL2PS 1.4.0, (C) 1999-2017 C. Geuzaine
 For: Octave
-CreationDate: Fri Jan 25 20:12:12 2019
+CreationDate: Sat Feb  2 23:33:03 2019
 </desc>
 <defs>
 </defs>
@@ -65,9 +65,9 @@ CreationDate: Fri Jan 25 20:12:12 2019
 <polyline fill="none" stroke="#262626" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="miter" stroke-dasharray="16,0" points="74.8799,32.3999 521.28,32.3999"/>
 <polyline fill="none" stroke="#262626" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="miter" stroke-dasharray="16,0" points="74.8799,384.48 74.8799,32.3999"/>
 <polyline fill="none" stroke="#262626" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="miter" stroke-dasharray="16,0" points="521.28,384.48 521.28,32.3999"/>
-<text xml:space="preserve" transform="translate(257.08,413.481) rotate(-0,41,-13)" font-family="FreeSans" font-weight="normal" font-style="normal" font-size="11"><tspan y="-2" fill="rgb(38,38,38)" x="0 7 13 22 28 34 38 44 47 53 57 63 66 70 78 ">Temperature (C)</tspan></text>
-<text xml:space="preserve" transform="translate(-17.6245,208.44) rotate(-90,42.5,0)" font-family="FreeSans" font-weight="normal" font-style="normal" font-size="11"><tspan y="-2" fill="rgb(38,38,38)" x="0 7 13 19 23 32 38 40 43 49 51 54 57 63 68 70 75 77 80 ">Thermal diffusivity</tspan></text>
 <text xml:space="preserve" transform="translate(105.58,22.4) rotate(-0,192.5,0)" font-family="FreeSans" font-weight="bold" font-style="normal" font-size="11"><tspan y="-2" fill="rgb(0,0,0)" x="0 7 14 20 24 34 40 43 46 53 56 60 64 71 77 80 86 89 93 99 102 108 114 117 123 126 130 137 144 150 154 157 164 171 174 181 185 188 192 198 208 215 221 225 231 235 242 246 252 255 259 266 270 273 277 284 290 293 299 306 310 313 317 323 326 332 338 345 351 355 358 368 374 381 ">Thermal diffusivity as a function of temperature for the entire experiment</tspan></text>
+<text xml:space="preserve" transform="translate(-34.1245,208.44) rotate(-90,59,0)" font-family="FreeSans" font-weight="normal" font-style="normal" font-size="11"><tspan y="-2" fill="rgb(38,38,38)" x="0 7 13 19 23 32 38 40 43 49 51 54 57 63 68 70 75 77 80 85 88 92 ">Thermal diffusivity (m</tspan><tspan font-size="9" y="-8" fill="rgb(38,38,38)" x="101 ">2</tspan><tspan y="-2" fill="rgb(38,38,38)" x="106 109 114 ">/s)</tspan></text>
+<text xml:space="preserve" transform="translate(257.08,413.481) rotate(-0,41,-13)" font-family="FreeSans" font-weight="normal" font-style="normal" font-size="11"><tspan y="-2" fill="rgb(38,38,38)" x="0 7 13 22 28 34 38 44 47 53 57 63 66 70 78 ">Temperature (C)</tspan></text>
 <polyline fill="none" stroke="#ff00ff" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="miter" points="83.3674,335.065 89.3674,335.065"/>
 <polyline fill="none" stroke="#ff00ff" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="miter" points="86.3674,332.065 86.3674,338.065"/>
 <polyline fill="none" stroke="#ff00ff" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="miter" points="84.246,332.943 88.4887,337.186"/>
