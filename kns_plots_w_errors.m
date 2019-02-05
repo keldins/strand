@@ -20,11 +20,6 @@ fmt1 = "m";     % solid violet line
 fmt2 = "*m";    % violet data points (scatter plot)
 fmt3 = "--m";   % dashed violet line
 
-% anneal starts at about 5000, ends at about 18000 seconds
-% let's eliminate the time in between to compress the graph horizontally
-squezd_times = [times.pre_anneal-5000; times.post_anneal00-18000; times.post_anneal01-18000] - 36000;
-squezd_times_hrs = squezd_times ./ 3600;
-
 fh = figure();
 errorbar(squezd_times_hrs, all_alphas, all_alpha_errs, "+m");
 hold on;
