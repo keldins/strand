@@ -1,11 +1,13 @@
-x1 = 1.5; %cm
-x2 = 1; % cm
-thickness = 13.4e-7 % 134 nm = 137e-7 cm
+% All simple calculations for the paper will go here for ease
+% of review and repetition. These will include things like unit 
+% conversions and density calculations.
 
-V_tot = x1*x2*thickness; % cm^3
+% Given and units:
+J_to_eV =    6.2415091e18;
+q_e = 1.6022e-19; % coloumbs, charge of an electron
 
 
-
+rho_PbS = 7.60; % g/cm^3
 atomwt_Pb = 207.2; % g/mol
 atomwt_S = 32.066;
 atomwt_Th = 232.038;
@@ -14,6 +16,20 @@ rho_S = 2.07;
 rho_Th = 11.74;
 
 N_A =  6.022140857e23; % atoms/mol
+
+
+
+
+% Geometry of sample
+x1 = 1.5; %cm
+x2 = 1; % cm
+thickness = 500e-7 % 500 nm = 500e-7 cm
+
+V_tot = x1*x2*thickness; % cm^3
+
+
+
+
 
 
 
