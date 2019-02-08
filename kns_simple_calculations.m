@@ -5,27 +5,65 @@
 % Given and units:
 J_to_eV =    6.2415091e18;
 q_e = 1.6022e-19; % coloumbs, charge of an electron
+N_A =  6.022140857e23; % atoms/mol
+
+ppm_Th = .15;
+ppb_Th = ppm_Th*1e3;
+Th_replaces_Pb_only = true;
+if(Th_replaces_Pb_only)
+  ppb_Pb = .5e9 - ppb_Th;
+  ppb_S = .5e9;
+else
+  ppb_Pb = (1e9-ppb_Th)/2;
+  ppb_S = ppb_Pb;
+end
 
 
 rho_PbS = 7.60; % g/cm^3
-atomwt_Pb = 207.2; % g/mol
-atomwt_S = 32.066;
-atomwt_Th = 232.038;
 rho_Pb = 11.34; % g/cm^3
 rho_S = 2.07;
 rho_Th = 11.74;
 
-N_A =  6.022140857e23; % atoms/mol
+atomwt_Pb = 207.2; % g/mol
+atomwt_S = 32.066;
+atomwt_Th = 232.038;
 
-
-
+heat_formation_PbS = .4169e3; % J/g
 
 % Geometry of sample
 x1 = 1.5; %cm
 x2 = 1; % cm
 thickness = 500e-7 % 500 nm = 500e-7 cm
 
+
+
+
+%%%% Begin calculations
+atomwt_PbS = atomwt_Pb + atomwt_S;
+atomwt_PbSTh = 2*(ppb_Pb*atomwt_Pb + ppb_S*atomwt_S + ppb_Th*atomwt_Th)/1e9;
+
+surface_binding_energy = ...
+heat_formation_PbS * J_to_eV * atomwt_PbS / N_A / 2; % eV per atom
+
 V_tot = x1*x2*thickness; % cm^3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
