@@ -18,7 +18,7 @@ fit_alphas = fit(d_times);
 plot(d_times, d_alphas*1e5, "*m", d_times, fit_alphas*1e5, "k");
 ylim([2.35   2.5]);
 
-title("Curve fit applied to post annealing thermal diffusivity.")
+title("Curve fit applied to posft annealing thermal diffusivity.")
 xlabel("Time (s)");
 ylabel("Thermal diffusivity (10^{-5} m^2/s)");
 text(6000, 2.42, "alpha = alpha_0 + A(1-exp(-d*t))", "color", "k");
