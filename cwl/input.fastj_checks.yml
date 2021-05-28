@@ -1,4 +1,0 @@
-flag: "-T -t"
-fastj_file:
-  class: Directory
-  path: keep:
